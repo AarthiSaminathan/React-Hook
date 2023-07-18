@@ -1,9 +1,9 @@
 import React, {  useState } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
+import StudentDashboard from '../Menu/StudentDashboard';
 
-import AdminDashboard from '../Menu/AdminDashboard';
 
-const Admin = () => {
+const Student = () => {
   const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
@@ -22,7 +22,7 @@ const Admin = () => {
     const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (username === 'admin' && password === 'password') {
+    if (username === 'n@me' && password === 'password') {
     setLoggedIn(true);
     }else{
       setError("Incorrect username or password");
@@ -33,7 +33,7 @@ const Admin = () => {
     };
     
     if (loggedIn) {
-    return <AdminDashboard />;
+    return <StudentDashboard/>;
     }
     
     
@@ -44,7 +44,7 @@ const Admin = () => {
   <div class="col s12 m8 l4 offset-m2 offset-l4">
     <div class="card">
 
-      <div class="card-action teal lighten-1 white-text">
+      <div class="card-action  green darken-3 white-text">
       <i class="material-icons medium prefix">account_circle</i>
          <h3>Login Form</h3>
       </div>
@@ -55,17 +55,22 @@ const Admin = () => {
          </div>
       <div class="form-field">
           <label for="username">Username</label>
-          <input type="text" id="username"   value={username} onChange={handleUsernameChange}/>
+          <input type="text" id="username" value={username} onChange={handleUsernameChange}/>
         </div>
 
         <div class="form-field">
           <label for="password">Password</label>
-          <input type="password" id="password"   value={password} onChange={handlePasswordChange}/>
-
+          <input type="password" id="password" value={password} onChange={handlePasswordChange}/>
         </div>
 
         <div class="form-field">
-          <button class="btn-large waves-effect waves-dark" type='submit' styles="width:50%;">Login</button>
+          <input type="checkbox" id="remem"/>
+          <label for="remem">Rememeber me</label>
+          
+        </div>
+
+        <div class="form-field">
+          <button class="btn-large waves-effect waves-dark  green darken-3" type='submit' styles="width:50%;">Login</button>
         </div>
       </div>
     </form>
@@ -77,4 +82,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default Student;

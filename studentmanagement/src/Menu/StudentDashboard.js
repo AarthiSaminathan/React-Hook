@@ -5,7 +5,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import M from "materialize-css/dist/js/materialize.min.js";
 
 
-const AdminDashboard = () => {
+const StudentDashboard = () => {
 
   useEffect(() => {
     
@@ -13,7 +13,7 @@ const AdminDashboard = () => {
   },[])
   const navigate = useNavigate();
   const handleLogout=()=>{
-  navigate("/Admin");
+  navigate("/Student");
  }
   
 return (
@@ -22,8 +22,8 @@ return (
   
 <div class="navbar-fixed hoverable">
     <nav>
-      <div class="nav-wrapper   blue darken-3">
-        <a href="#" class="brand-logo center" styles="margin-left: 1em;">Admin Portal</a>
+      <div class="nav-wrapper   orange darken-1">
+        <a href="#" class="brand-logo center" styles="margin-left: 1em;">Student Portal</a>
         <ul class="right">
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Hello User<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
@@ -39,8 +39,6 @@ return (
     <ul id="nav-mobile" class="sidenav sidenav-fixed">
       <li class="bold">
       <a href="#" data-target="slide-out" class="sidenav-trigger">Dashboard <i class="material-icons">menu</i></a>
-      
-
       </li>
       
 
@@ -50,15 +48,9 @@ return (
         <ul class="collapsible collapsible-accordion">
           
           <li>
-            <a class="collapsible-header">Admin<i class="material-icons my-color">whatshot</i></a>
+            <a class="collapsible-header">Student<i class="material-icons my-color">perm_identity</i></a>
             <div class="collapsible-body">
-            <ul>
-              <li><Link to="/AddStudent">AddStudent</Link></li><br/>
-              <li><Link to="/GetStudent">GetStudent</Link></li><br/>
-              <li><Link to="/UpdateStudent">UpdateStudent</Link></li><br/>
-              <li><Link to="/DeleteStudent">DeleteStudent</Link></li><br/>
-              <li><Link to="/AddMarks">AddMark</Link></li>
-              </ul>
+
             </div>
           </li>
 
@@ -78,4 +70,4 @@ return (
 );
 };
 
-export default AdminDashboard;
+export default StudentDashboard;
