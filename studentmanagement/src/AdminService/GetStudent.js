@@ -2,15 +2,14 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import Popup from 'reactjs-popup';
+import BackgroundImage from "../Add.jpg";
 import 'reactjs-popup/dist/index.css';
 import M from "materialize-css/dist/js/materialize.min.js";
+import AdminDashboard from "../Menu/AdminDashboard";
 
 export default function GetStudent()
 {
-  const navigate = useNavigate();
-  const handleBack=()=>{
-      navigate("/A");
-     }
+ 
      document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.modal');
       M.Modal.init(elems);
@@ -48,7 +47,7 @@ export default function GetStudent()
       setFormData({
           ...formData,
           [e.target.name]:e.target.value
-      });
+      }); 
   };
   const handleCancel=()=>{
       setFormData({
@@ -97,19 +96,41 @@ const handleFormCancel=()=>{
 
       },[]);
       if (!post) return null; 
+      const divStyle={
+        backgroundImage:`url(${BackgroundImage})`,
+        backgroundSize:"cover",
+        backgroundRepeat:"no-repeat",
+        backgroundPosition:"center",
+        height:"150vh",
+        width:"200vh",
+        paddingLeft:"80px",
+        paddingTop:"2px",
+        paddingBottom:"80px"
+
+
+      }
       
       return(
 
         <>
-            <div className="row">
+        <AdminDashboard/>
+        <div className="AddStudent" style={divStyle}>
+  <div class="col s12 m8 l4 offset-m2 offset-l4" style={{paddingTop:90,paddingRight:300,paddingLeft:300,paddingBottom:20}} >
+    <div class="card" >
+      
+      <div class="card-action blue lighten-4 black-text">
+    
+      
+            <div className="row " >
               <div className="col l2"></div>
               <div className="col l8">
+                
               <table>
           <thead>
             <tr> 
               <th>Name</th>
               <th>Standard</th>
-              <th>AcademicYear</th>
+              <th>AcademicYear</th>   
               <th>Gender</th>
             </tr>
           </thead>
@@ -123,7 +144,7 @@ const handleFormCancel=()=>{
                 <td>
                 
                 <div>
-            <Popup className="model-content" trigger=
+            <Popup className="model-content" contentStyle={{width: "600px",height:500,overflow:"auto",padding:"200px",position:"absolute",top:"50%",left:"50%",transform: "translate(-50%, -50%)"}} trigger=
                 {<button className="btn blue"> Update </button>}>
                   <form onSubmit={handleFormSubmit}>
            Id:<input type="number" name="id" value={formData.id} onChange={handleInputChange}/><br/><br/>
@@ -151,7 +172,7 @@ const handleFormCancel=()=>{
                   </td>
                   <td>
                   <div>
-            <Popup className="model-content" trigger=
+            <Popup className="model-content"  contentStyle={{width: "600px",height:500,overflow:"auto",padding:"200px",position:"absolute",top:"50%",left:"50%",transform: "translate(-50%, -50%)"}} trigger=
                 {<button className="btn red"> Delete</button>}
                 position="bottom center">
               <form onSubmit={handleFormDetailSubmit}>
@@ -178,11 +199,13 @@ const handleFormCancel=()=>{
               </div>
               <div className="col l2"></div>
             </div>
-            <div style={{textAlign:"center"}}>
-            <button type="submit" onClick={handleBack}>Back</button>
-            </div>
+            
+           </div>
+           </div>
            
-
+        </div>
+        </div>
+         
         </>
    
     );

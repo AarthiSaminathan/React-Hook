@@ -1,0 +1,23 @@
+#dashboard{
+    color: darkblue;
+    font-size: large;
+    padding-right: 90px;
+    margin-top:-80px;
+}
+
+#admin{
+    color: darkblue;
+    padding-left: 90px;
+}
+
+#student{
+    color: darkblue;
+}
+
+#school{
+    padding:90px;
+    margin-top: -90px;
+    color: cadetblue;
+}
+
+

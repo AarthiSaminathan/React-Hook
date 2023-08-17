@@ -1,5 +1,6 @@
 import React, {  useState } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
+import BackgroundImage from "../Login.png";
 
 import AdminDashboard from '../Menu/AdminDashboard';
 
@@ -8,6 +9,14 @@ const Admin = () => {
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
     const [error,setError]=useState('');
+
+    const divStyle={
+      backgroundImage:`url(${BackgroundImage})`,
+      backgroundSize:"cover",
+      backgroundRepeat:"no-repeat",
+      backgroundPosition:"center",
+      height:"100vh"
+    }
     
     const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -39,11 +48,12 @@ const Admin = () => {
     
     return (
         <div>
+          <div className="Admin" style={divStyle}>
             <center>
         <div class="row">
-  <div class="col s12 m8 l4 offset-m2 offset-l4">
-    <div class="card">
-
+  <div class="col s12 m8 l4 offset-m2 offset-l4" style={{paddingTop:80,width:400}} >
+    <div class="card" >
+      
       <div class="card-action teal lighten-1 white-text">
       <i class="material-icons medium prefix">account_circle</i>
          <h3>Login Form</h3>
@@ -73,6 +83,7 @@ const Admin = () => {
   </div>
 </div>
 </center>
+</div>
 </div>
     );
 };

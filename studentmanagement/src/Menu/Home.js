@@ -1,19 +1,26 @@
 import React from "react";
+import BackgroundImage from "../Home.png";
  const Home =()=>{
-   
-    
+  const divStyle={
+    backgroundImage:`url(${BackgroundImage})`,
+    backgroundSize:"cover",
+    backgroundRepeat:"no-repeat",
+    backgroundPosition:"center",
+    height:"100vh"
+  }
     return(
         <div>
+          <div className="Home" style={divStyle}>
             <nav>
-    <div class="nav-wrapper  purple lighten-1">
-      <a href="#!" class="brand-logo">Student Management System<i class="large material-icons">home</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/Admin"><i class="material-icons left">whatshot</i>Admin</a></li>
-        <li><a href="/Student"><i class="material-icons left">perm_identity</i>Student</a></li>
+    <div class="nav-wrapper  purple lighten-1" id="nav">
+      <a href="#!" class="brand-logo">Student Management System</a>
+      <ul class="right hide-on-med-and-down" >
+        <li><a href="/Admin"><b>Admin</b></a></li>
       </ul>
     </div>
   </nav>
-        </div>
-    )
+  </div>
+  </div>
+  )
  }
  export default Home;

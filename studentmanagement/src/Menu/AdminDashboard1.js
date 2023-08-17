@@ -2,12 +2,12 @@ import React, { useState,useEffect } from "react";
 import {  Link } from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-import "./AdnDashboard.css";
+import "./AdnDashboard1.css";
 import 'materialize-css/dist/css/materialize.min.css';
 import M from "materialize-css/dist/js/materialize.min.js";
 
 
-const AdminDashboard = () => {
+const AdminDashboard1 = () => {
 
   const[menuData,setMenuData]=useState([]);
   const[subMenuData,setSubMenuData]=useState([]);
@@ -39,36 +39,35 @@ const AdminDashboard = () => {
 return (
      
 <div >
-<div className="AdminDashboard" >
+<div className="AdminDashboard">
 <div class="navbar-fixed hoverable">
     <nav>
       <div class="nav-wrapper  blue darken-3">
-        <a href="#" class="brand-logo center" styles="margin-left: 1em;">Admin Portal</a>
+        <a href="#" class="brand-logo center" styles="text-align:center">Welcome to Admin Portal</a>
         <ul class="right">
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><b>Hello User</b><i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Hello User!</a></li>
             </ul>
       </div>
     </nav>
   </div>
-    
-      
-    <ul id="dropdown1" class="dropdown-content">
+  <ul id="dropdown1" class="dropdown-content">
       <li><a href="/"  onClick={handleLogout}>Logout</a></li>
     </ul>
-    <ul id="nav-mobile" class="sidenav sidenav-fixed "  ><i class="material-icons medium" id="school">school</i>
-      <li class="bold">
-      <a href="#" data-target="slide-out" class="sidenav-trigger" id="dashboard">Dashboard <i class="material-icons">menu</i></a>
-      </li>
-      
+<div className="container" >
+      <div className="row">
+        <div className="col s3">
+        <ul id="slide-out" class="sidenav sidenav-fixed"><i class="material-icons large" id="school">school</i>
+        <li class="bold">
+      <a href="#" data-target="slide-out" class="sidenav-trigger " id="dashboard">Dashboard <i class="material-icons">menu</i></a>
+      </li><hr/>
 
-      <ul id="slide-out" class="sidenav">
-      
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          
-          <li>
-           <a class="collapsible-header" id="admin">Admin</a>
-            <ul class="collapsible collapsible-accordion">
+
+    <ul class="collapsible" data-collapsible="accordion">
+      <li id="dash_users">
+        <div id="dash_users_header" class="collapsible-header "><i class="material-icons">perm_identity</i>
+            <b>Student</b></div>
+        <div id="dash_users_body" class="collapsible-body-fixed">
+           <ul class="collapsible collapsible-accordion">
               {menuData.map((menu)=>(
                 <li key={menu.menu}>
                   <button onClick={()=>{
@@ -97,14 +96,17 @@ return (
               ))}
             </ul>
 
-          </li>
-        </ul>
+        </div>
       </li>
-    </ul>    
-<ul/>
-      </ul>
-      </div>
-  </div>
+
+    
+    </ul>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 );
 };
-export default AdminDashboard;                                                  
+export default AdminDashboard1;                                                  
